@@ -9,7 +9,7 @@ import Mathlib.Data.Countable.Basic
 New concepts: `Classical.choose`, `Classical.choose_spec`, `∃!`,
   `noncomputable`, `local notation`, `abbrev`,
   implicit vs explicit `variable`, `if h : P then … else …`
-Recall: **choose** (tactic, L15), **funext, simp, rcases, by_contra, push_neg, intro, apply, use, obtain, omega, exact?, apply?**
+Recall: **simp, rcases, intro, apply, use, obtain, omega**
 
 ## Overview
 
