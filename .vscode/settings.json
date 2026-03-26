@@ -42,5 +42,12 @@
         "exfalso",
         "rcases",
         "rintro"
-    ]
+    ],
+    "chat.tools.terminal.autoApprove": {
+        "git status": true,
+        "git log": true,
+        "git rev-list": true,
+        "git show-ref": true,
+        "cat": true
+    }
 }
