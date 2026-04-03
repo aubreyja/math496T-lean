@@ -133,23 +133,46 @@ theorem problem6 : P ∨ (Q ∧ R) ↔ (P ∨ Q) ∧ (P ∨ R) := by
 
 @[autogradedProof 5]
 theorem problem7 : (P ∧ ¬ Q) → ¬ (P → Q) := by
-  sorry
+  rintro ⟨p,nq⟩
+  intro h
+  have q := h p
+  contradiction
   done
 
 @[autogradedProof 5]
 theorem problem8 : ∀ S : Prop, ¬ P → (P → S) := by
-  sorry
+  intro s
+  intro np
+  intro p
+  contradiction
   done
 
 -- This might require some logical thinking first
 @[autogradedProof 5]
 theorem problem9 : ∃ Q, ∀ P, P ∨ Q ↔ Q := by
-  sorry
+  use True
+  intro p
+  constructor
+  rintro (h₁ | h₂)
+  trivial
+  assumption
+  intro
+  right
+  assumption
   done
 
 @[autogradedProof 5]
 theorem problem10 : ∃ Q, ∀ P, P ∨ Q ↔ P := by
-  sorry
+  use False
+  intro p
+  constructor
+  rintro (h₁ | h₂)
+  assumption
+  exfalso
+  assumption
+  intro
+  left
+  assumption
   done
 
 end
