@@ -12,35 +12,123 @@ variable (P Q R T: Prop)
 -- Commutativity
 @[autogradedProof 5]
 theorem problem1 : P ∧ Q ↔ Q ∧ P := by
-  sorry
+  constructor
+  rintro ⟨h₁,h₂⟩
+  constructor
+  assumption
+  assumption
+  rintro ⟨h₁,h₂⟩
+  constructor
+  assumption
+  assumption
   done
 
 @[autogradedProof 5]
 theorem problem2 : P ∨ Q ↔ Q ∨ P := by
-  sorry
+  constructor
+  · rintro (hp|hq)
+    right
+    assumption
+    left
+    assumption
+  · rintro (hq|hp)
+    right
+    assumption
+    left
+    assumption
   done
 
  -- Associativity
 @[autogradedProof 5]
 theorem problem3 : (P ∧ Q) ∧ R ↔ Q ∧ (P ∧ R) := by
-  sorry
+  constructor
+  · rintro ⟨⟨hp,hq⟩,hr⟩
+    constructor
+    assumption
+    constructor
+    assumption
+    assumption
+  · rintro ⟨hq,⟨hp,hr⟩⟩
+    constructor
+    constructor
+    assumption
+    assumption
+    assumption
   done
 
 @[autogradedProof 5]
 theorem problem4 : (P ∨ Q) ∨ R ↔ Q ∨ (P ∨ R) := by
-  sorry
+  constructor
+  · rintro ((hp|hq)|hr)
+    right
+    left
+    assumption
+    left
+    assumption
+    right
+    right
+    assumption
+  · rintro (hq|(hp|hr))
+    left
+    right
+    assumption
+    left
+    left
+    assumption
+    right
+    assumption
   done
 
 -- Distributivity of ∧ over ∨
 @[autogradedProof 5]
 theorem problem5 : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) := by
-  sorry
+  constructor
+  · rintro ⟨hp,(hq|hr)⟩
+    left
+    constructor
+    assumption
+    assumption
+    right
+    constructor
+    assumption
+    assumption
+  · rintro (⟨p,q⟩|⟨p,r⟩)
+    constructor
+    assumption
+    left
+    assumption
+    constructor
+    assumption
+    right
+    assumption
   done
 
 -- Distributivity of ∨ over ∧
 @[autogradedProof 5]
 theorem problem6 : P ∨ (Q ∧ R) ↔ (P ∨ Q) ∧ (P ∨ R) := by
-  sorry
+  constructor
+  · rintro (p|⟨q,r⟩)
+    constructor
+    left
+    assumption
+    left
+    assumption
+    constructor
+    right
+    assumption
+    right
+    assumption
+  · rintro ⟨(p|q),(p|r)⟩
+    left
+    assumption
+    constructor
+    assumption
+    left
+    assumption
+    right
+    constructor
+    assumption
+    assumption
   done
 
 @[autogradedProof 5]
